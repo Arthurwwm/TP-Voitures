@@ -15,18 +15,6 @@
             $view->render(array('voiture'=>$voiture));
         }
     }
-    // class ControlerVoitures{
-    //     private $autos;
-
-    //     public function __construct(){
-    //         $this->autos = new Voiture();
-    //     }
-    //     public function voitures(){
-    //         $voitures = $this->autos->getAllVoitures();
-    //         $view = new Vue('Voitures');
-    //         $view->render(array('voitures'=>$voitures));
-    //     }
-    // }
     class ControlerVoitures{
         private $autos;
         private $page;
@@ -40,9 +28,11 @@
             } else{
                 $this->page = 1;
             }
+            $nbPages = ($this->autos->countVoitures()/6)<1?1:$this->autos->countVoitures()/6;
+
             $voitures = $this->autos->getVoituresPage($this->page);
             $view = new Vue('Voitures');
-            $view->render(array('voitures'=>$voitures));
+            $view->render(array('voitures'=>$voitures, 'nbPages'=>$nbPages));
         }
     }
     class ControlerVoituresMarque{

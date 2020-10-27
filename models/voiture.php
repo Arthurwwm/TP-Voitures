@@ -28,6 +28,13 @@ class Voiture extends Model{
         return $voitures;
     }
 
+    public function countVoitures(){
+        $sql = "SELECT COUNT(*) AS nbVoit FROM VOITURE";
+        $nbVoitures = $this->goQuery($sql);
+        $retour = $nbVoitures->fetch();
+        $retour = (int)$retour['nbVoit'];
+        return $retour;
+    }
     public function getLastVoitures(){
         $sql = "SELECT * FROM (SELECT * FROM VOITURE ORDER BY id DESC LIMIT 3) t ORDER BY id ASC";
         $voitures = $this->goQuery($sql);
