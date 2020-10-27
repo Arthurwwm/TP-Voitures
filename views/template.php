@@ -10,7 +10,7 @@
     <nav>
         <img src="public/icons/AutoRetroChic.png" alt="logo association">
         <h1>AutoRétro Chic</h1>
-        <a href="">ACCUEIL</a>
+        <a href="?action=index">ACCUEIL</a>
         <a href="">LES CONSTRUCTEURS</a>
         <a href="">LES VOITURES</a>
     </nav>

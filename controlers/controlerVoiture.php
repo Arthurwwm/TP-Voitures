@@ -1,0 +1,21 @@
+<?php
+    require_once 'models/voiture.php';
+    require_once 'models/constructeur.php';
+    require_once 'views/view.php';
+
+    class ControlerVoiture{
+        private $autos;
+        private $constructeur;
+
+        public function __construct(){
+            $this->autos = new Voiture();
+            $this->constructeur = new Constructeur();
+        }
+        public function voiture($idVoiture){
+            $voiture = $this->autos->getVoiture($idVoiture);
+            $view = new Vue('Voiture');
+            $view->render(array('voiture'=>$voiture));
+        }
+
+
+    }

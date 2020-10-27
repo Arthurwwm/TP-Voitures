@@ -5,9 +5,11 @@ require_once 'model.php';
 class Voiture extends Model{
 
     public function getVoiture($idVoiture){
-        $sql = "SELECT * FROM VOITURE WHERE id=?";
+        $sql = "SELECT v.id, v.nom as voitNom, v.année_construct, v.resume, v.image, c.nom as constrNom FROM VOITURE v INNER JOIN CONSTRUCTEUR c ON v.id_constructeur = c.id WHERE v.id=?";
         $voiture = $this->goQuery($sql, array($idVoiture));
-        return $voiture;
+        $retour = $voiture->fetch();
+        $voiture->closeCursor();
+        return $retour;
     }
 
     public function getVoituresConstructeur($idConstructeur){

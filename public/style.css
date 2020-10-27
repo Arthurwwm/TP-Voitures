@@ -76,3 +76,8 @@ main #lienConstructIndex{
     font-weight: bolder;
     margin-bottom: 15px;
 }
+.pageVoitureAuto{
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+}
