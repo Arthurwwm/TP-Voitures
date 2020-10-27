@@ -37,7 +37,7 @@
                     }else if($_GET['action'] == 'constructeurs'){
                         $this->ctrlConstructs->constructeurs();
                     }else if($_GET['action'] == 'voitures'){
-                        $this->ctrlVoitures->voitures($premier);
+                        $this->ctrlVoitures->voitures();
                     }else if($_GET['action'] == 'voituresMarque'){
                         $this->ctrlVoituresMarque->voituresMarque($_GET['id']);
                     }else if($_GET['action'] == 'annee'){

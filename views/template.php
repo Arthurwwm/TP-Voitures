@@ -12,7 +12,7 @@
         <h1>AutoRétro Chic</h1>
         <a href="?action=index">ACCUEIL</a>
         <a href="?action=constructeurs">LES CONSTRUCTEURS</a>
-        <a href="?action=voitures&page=1">LES VOITURES</a>
+        <a href="?action=voitures">LES VOITURES</a>
     </nav>
     <main>
 <?= $content ?>

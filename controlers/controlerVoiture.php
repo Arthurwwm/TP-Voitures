@@ -21,11 +21,8 @@
         public function __construct(){
             $this->autos = new Voiture();
         }
-        public function voitures($premier){
-
-            $voitures = $this->autos->getAllVoitures($premier);
-            $nbVoitures = $this->autos->countVoitures();
-            
+        public function voitures(){
+            $voitures = $this->autos->getAllVoitures();
             $view = new Vue('Voitures');
             $view->render(array('voitures'=>$voitures));
         }
@@ -51,6 +48,6 @@
         public function voitureAnnee($annee){
             $voitures = $this->autos->getVoitureAnnee($annee);
             $view = new Vue('Annee');
-            $view->render(array('voitures'=>$voitures, 'nbVoitures'=>$nbVoitures));
+            $view->render(array('voitures'=>$voitures));
         }
     }

@@ -20,15 +20,10 @@ class Voiture extends Model{
         return $retour;
     }
 
-    public function getAllVoitures($premier){
-        $sql = "SELECT * FROM VOITURE ORDER BY id DESC LIMIT ?,6";
-        $voitures = $this->goQuery($sql, array($premier));
+    public function getAllVoitures(){
+        $sql = "SELECT * FROM VOITURE";
+        $voitures = $this->goQuery($sql);
         return $voitures;
-    }
-    public function countVoitures(){
-        $sql = "SELECT COUNT(*) AS nbVoitures FROM VOITURES";
-        $nbVoitures = $this->goQuery($sql);
-        return $nbVoitures;
     }
 
     public function getLastVoitures(){
