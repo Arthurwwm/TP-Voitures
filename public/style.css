@@ -79,6 +79,24 @@ main #lienConstructIndex{
     font-size: 1.5rem;
     font-weight: bolder;
     margin-bottom: 15px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+main #lienConstructIndex:hover{
+    color: rgb(43, 108, 159);
+}
+.lienBasique{
+    display: block;
+    text-decoration: none;
+    color: rgb(62, 172, 255);
+    font-size: 1.5rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.lienBasique:hover{
+    color: rgb(43, 108, 159);
 }
 .pageVoitureAuto{
     width: 80%;

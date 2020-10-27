@@ -5,11 +5,9 @@
 
     class ControlerVoiture{
         private $autos;
-        private $constructeur;
 
         public function __construct(){
             $this->autos = new Voiture();
-            $this->constructeur = new Constructeur();
         }
         public function voiture($idVoiture){
             $voiture = $this->autos->getVoiture($idVoiture);
@@ -19,15 +17,26 @@
     }
     class ControlerVoitures{
         private $autos;
-        private $constructeur;
 
         public function __construct(){
             $this->autos = new Voiture();
-            $this->constructeur = new Constructeur();
         }
         public function voitures(){
             $voitures = $this->autos->getAllVoitures();
             $view = new Vue('Voitures');
             $view->render(array('voitures'=>$voitures));
         }
+    }
+    class ControlerVoituresMarque{
+        private $autos;
+
+        public function __construct(){
+            $this->autos = new Voiture();
+        }
+        public function voituresMarque($idConstruct){
+            $voitures = $this->autos->getVoituresConstructeur($idConstruct);
+            $view = new Vue('VoituresMarque');
+            $view->render(array('voitures'=>$voitures));
+        }
+
     }

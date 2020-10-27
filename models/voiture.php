@@ -13,9 +13,11 @@ class Voiture extends Model{
     }
 
     public function getVoituresConstructeur($idConstructeur){
-        $sql = "SELECT v.nom, v.année_construct, v.image, c.nom FROM VOITURE v INNER JOIN CONSTRUCTEUR c ON v.id_constructeur = c.id WHERE c.id=?";
+        $sql = "SELECT v.id as idVoit, v.nom as nomVoit, v.année_construct, v.image, c.nom as constNom, c.id as idConst FROM VOITURE v INNER JOIN CONSTRUCTEUR c ON v.id_constructeur = c.id WHERE c.id=?";
         $voitures = $this->goQuery($sql, array($idConstructeur));
-        return $voitures;
+        $retour = $voitures->fetchAll();
+        $voitures->closeCursor();
+        return $retour;
     }
 
     public function getAllVoitures(){
