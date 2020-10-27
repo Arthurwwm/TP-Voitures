@@ -9,11 +9,14 @@
 
         private $ctrlIndex;
         private $ctrlVoiture;
+        private $ctrlVoitures;
         private $ctrlConstruct;
+        private $ctrlConstructs;
 
         public function __construct(){
             $this->ctrlIndex = new ControlerIndex();
             $this->ctrlVoiture = new ControlerVoiture();
+            $this->ctrlVoitures = new ControlerVoitures();
             $this->ctrlConstruct = new ControlerConstructeur();
             $this->ctrlConstructs = new ControlerConstructeurs();
         }
@@ -29,6 +32,8 @@
                         $this->ctrlConstruct->constructeur($_GET['id']);
                     }else if($_GET['action'] == 'constructeurs'){
                         $this->ctrlConstructs->constructeurs();
+                    }else if($_GET['action'] == 'voitures'){
+                        $this->ctrlVoitures->voitures();
                     }
                 } else{
                     $this->ctrlIndex->index();

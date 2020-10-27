@@ -16,6 +16,18 @@
             $view = new Vue('Voiture');
             $view->render(array('voiture'=>$voiture));
         }
+    }
+    class ControlerVoitures{
+        private $autos;
+        private $constructeur;
 
-
+        public function __construct(){
+            $this->autos = new Voiture();
+            $this->constructeur = new Constructeur();
+        }
+        public function voitures(){
+            $voitures = $this->autos->getAllVoitures();
+            $view = new Vue('Voitures');
+            $view->render(array('voitures'=>$voitures));
+        }
     }
