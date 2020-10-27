@@ -13,6 +13,7 @@
         private $ctrlConstruct;
         private $ctrlConstructs;
         private $ctrlVoituresMarque;
+        private $ctrlVoituresAnnee;
 
         public function __construct(){
             $this->ctrlIndex = new ControlerIndex();
@@ -21,6 +22,7 @@
             $this->ctrlConstruct = new ControlerConstructeur();
             $this->ctrlConstructs = new ControlerConstructeurs();
             $this->ctrlVoituresMarque = new ControlerVoituresMarque();
+            $this->ctrlVoituresAnnee = new ControlerVoitureAnnee();
         }
 
         public function routeQuery(){
@@ -38,6 +40,8 @@
                         $this->ctrlVoitures->voitures();
                     }else if($_GET['action'] == 'voituresMarque'){
                         $this->ctrlVoituresMarque->voituresMarque($_GET['id']);
+                    }else if($_GET['action'] == 'annee'){
+                        $this->ctrlVoituresAnnee->voitureAnnee($_GET['annee']);
                     }
                 } else{
                     $this->ctrlIndex->index();

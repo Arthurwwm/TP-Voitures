@@ -31,4 +31,12 @@ class Voiture extends Model{
         $voitures = $this->goQuery($sql);
         return $voitures;
     }
+
+    public function getVoitureAnnee($annee){
+        $sql = "SELECT * FROM VOITURE WHERE année_construct =?";
+        $voitures = $this->goQuery($sql, array($annee));
+        $retour = $voitures->fetchAll();
+        $voitures->closeCursor();
+        return $retour;
+    }
 }

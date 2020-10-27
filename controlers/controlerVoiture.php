@@ -38,5 +38,16 @@
             $view = new Vue('VoituresMarque');
             $view->render(array('voitures'=>$voitures));
         }
+    }
+    class ControlerVoitureAnnee{
+        private $autos;
 
+        public function __construct(){
+            $this->autos = new Voiture();
+        }
+        public function voitureAnnee($annee){
+            $voitures = $this->autos->getVoitureAnnee($annee);
+            $view = new Vue('Annee');
+            $view->render(array('voitures'=>$voitures));
+        }
     }
