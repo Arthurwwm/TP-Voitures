@@ -2,7 +2,7 @@
 
 abstract class Model {
 
-    private $db;
+    protected $db;
 
     protected function goQuery($sql, $params = null){
         if($params == null){
@@ -14,7 +14,7 @@ abstract class Model {
         return $result;
     }
 
-    private function getDb(){
+    protected function getDb(){
         if($this->db == null){
             $this->db = new PDO('mysql:host=localhost;dbname=autoRetro;charset=utf8', 'userVoiture', 'mdp123', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }

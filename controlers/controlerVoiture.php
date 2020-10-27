@@ -15,14 +15,32 @@
             $view->render(array('voiture'=>$voiture));
         }
     }
+    // class ControlerVoitures{
+    //     private $autos;
+
+    //     public function __construct(){
+    //         $this->autos = new Voiture();
+    //     }
+    //     public function voitures(){
+    //         $voitures = $this->autos->getAllVoitures();
+    //         $view = new Vue('Voitures');
+    //         $view->render(array('voitures'=>$voitures));
+    //     }
+    // }
     class ControlerVoitures{
         private $autos;
+        private $page;
 
         public function __construct(){
             $this->autos = new Voiture();
         }
         public function voitures(){
-            $voitures = $this->autos->getAllVoitures();
+            if(isset($_GET['page'])){
+                $this->page = $_GET['page'];
+            } else{
+                $this->page = 1;
+            }
+            $voitures = $this->autos->getVoituresPage($this->page);
             $view = new Vue('Voitures');
             $view->render(array('voitures'=>$voitures));
         }
