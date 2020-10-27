@@ -6,7 +6,7 @@ class Vue{
     private $title;
 
     public function __construct($action){
-        $this->file = 'views/'.ucfirst($action).'.php';
+        $this->file = 'views/view'.ucfirst($action).'.php';
     }
 
     public function render($data){

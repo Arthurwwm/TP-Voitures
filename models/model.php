@@ -11,7 +11,7 @@ abstract class Model {
             $result = $this->getDb()->prepare($sql);
             $result->execute($params);
         }
-        return $resul;
+        return $result;
     }
 
     private function getDb(){

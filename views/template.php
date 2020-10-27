@@ -11,7 +11,7 @@
         LA NAV BAR OUI
     </nav>
     <main>
-        <?= $contenu ?>
+        <?= $content ?>
     </main>
     <footer>
         LE FOOTER OUI

@@ -11,3 +11,8 @@ nav{
     top: 0;
     width: 100%;
 }
+footer{
+    background-color: blueviolet;
+    position: absolute;
+    bottom: 0;
+}

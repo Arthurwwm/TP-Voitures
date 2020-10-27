@@ -1,5 +1,5 @@
 <?php
     require 'controlers/router.php';
 
-    $routeur = new router();
-    $router->routerQuery();
+    $routeur = new Router();
+    $routeur->routeQuery();
