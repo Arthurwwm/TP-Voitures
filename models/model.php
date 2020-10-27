@@ -16,7 +16,7 @@ abstract class Model {
 
     private function getDb(){
         if($this->db == null){
-            $this->db = new PDO('mysql:host=localhost;dbname=autoRetro;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $this->db = new PDO('mysql:host=localhost;dbname=autoRetro;charset=utf8', 'userVoiture', 'mdp123', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         return $this->db;
     }
