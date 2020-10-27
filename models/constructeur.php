@@ -9,4 +9,12 @@ class Constructeur extends Model{
         $constructeur = $this->goQuery($sql, array($idConstruct));
         return $constructeur;
     }
+
+    public function getRandomConstructeur(){
+        $sql = "SELECT * FROM CONSTRUCTEUR ORDER BY RAND() LIMIT 1";
+        $constructeur = $this->goQuery($sql);
+        $retour = $constructeur->fetch();
+        $constructeur->closeCursor();
+        return $retour;
+    }
 }
