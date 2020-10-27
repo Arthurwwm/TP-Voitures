@@ -2,16 +2,19 @@
 
     require_once 'controlerIndex.php';
     require_once 'controlerVoiture.php';
+    require_once 'controlerConstructeur.php';
     require_once './views/view.php';
 
     class Router{
 
         private $ctrlIndex;
         private $ctrlVoiture;
+        private $ctrlConstruct;
 
         public function __construct(){
             $this->ctrlIndex = new ControlerIndex();
             $this->ctrlVoiture = new ControlerVoiture();
+            $this->ctrlConstruct = new ControlerConstructeur();
         }
 
         public function routeQuery(){
@@ -21,6 +24,8 @@
                         $this->ctrlVoiture->voiture($_GET['id']);
                     }else if($_GET['action'] == 'index'){
                         $this->ctrlIndex->index();
+                    }else if($_GET['action'] == 'constructeur'){
+                        $this->ctrlConstruct->constructeur($_GET['id']);
                     }
                 } else{
                     $this->ctrlIndex->index();
