@@ -16,7 +16,22 @@
             $constructeur = $this->constructeur->getConstructeur($idConstructeur);
             $view = new Vue('Constructeur');
             $view->render(array('constructeur'=> $constructeur));
+        }
+    }
 
+    
+    class ControlerConstructeurs{
+        private $autos;
+        private $constructeurs;
+
+        public function __construct(){
+            $this->autos = new Voiture();
+            $this->constructeur = new Constructeur();
         }
 
+        public function constructeurs(){
+            $constructeurs = $this->constructeur->getAllConstructeurs();
+            $view = new Vue('Constructeurs');
+            $view->render(array('constructeurs'=> $constructeurs));
+        }
     }

@@ -17,6 +17,14 @@ class Voiture extends Model{
         $voitures = $this->goQuery($sql, array($idConstructeur));
         return $voitures;
     }
+    
+    public function getAllVoitures(){
+        $sql = "SELECT * FROM VOITURE";
+        $voitures = $this->goQuery($sql);
+        $retour = $voitures->fetch();
+        $voitures->closeCursor();
+        return $retour;
+    }
 
     public function getLastVoitures(){
         $sql = "SELECT * FROM (SELECT * FROM VOITURE ORDER BY id DESC LIMIT 3) t ORDER BY id ASC";

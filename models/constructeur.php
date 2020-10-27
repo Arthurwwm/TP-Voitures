@@ -11,6 +11,13 @@ class Constructeur extends Model{
         $constructeur->closeCursor();
         return $retour;
     }
+    public function getAllConstructeurs(){
+        $sql = "SELECT * FROM CONSTRUCTEUR";
+        $constructeurs = $this->goQuery($sql);
+        // $retour = $constructeurs->fetch();
+        // $constructeurs->closeCursor();
+        return $constructeurs;
+    }
 
     public function getRandomConstructeur(){
         $sql = "SELECT * FROM CONSTRUCTEUR ORDER BY RAND() LIMIT 1";

@@ -15,6 +15,7 @@
             $this->ctrlIndex = new ControlerIndex();
             $this->ctrlVoiture = new ControlerVoiture();
             $this->ctrlConstruct = new ControlerConstructeur();
+            $this->ctrlConstructs = new ControlerConstructeurs();
         }
 
         public function routeQuery(){
@@ -26,6 +27,8 @@
                         $this->ctrlIndex->index();
                     }else if($_GET['action'] == 'constructeur'){
                         $this->ctrlConstruct->constructeur($_GET['id']);
+                    }else if($_GET['action'] == 'constructeurs'){
+                        $this->ctrlConstructs->constructeurs();
                     }
                 } else{
                     $this->ctrlIndex->index();
