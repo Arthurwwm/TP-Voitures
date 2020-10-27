@@ -9,4 +9,8 @@ class Voiture extends Model{
         $voiture = goQuery($sql, array($idVoiture));
         return $voiture;
     }
+
+    public function getVoituresConstructeur($idConstructeur){
+        $sql = "SELECT v.nom, v.année_construct, v.image, c.nom FROM VOITURE v INNER JOIN CONSTRUCTEUR c ON v.id_constructeur = c.id";
+    }
 }
