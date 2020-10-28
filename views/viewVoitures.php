@@ -9,5 +9,5 @@
             }
             echo '<div id="pages">Page : ';
             for($i=1;$i<=$nbPages;$i++){
-                echo '<a href="?action=voitures&page='.$i.'">'.$i;
+                echo '<a href="?action=voitures&page='.$i.'">'.$i.'</a>..';
             }

@@ -135,3 +135,28 @@ main #lienConstructIndex:hover{
 .lienFlex:hover{
     color: rgb(43, 108, 159);
 }
+#livreOr{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    border: dotted rgb(62, 172, 255) 1px;
+    background-color: rgb(233, 241, 255);
+    padding: 25px;
+}
+#livreOr textarea{
+    resize: none;
+}
+#livreOr *{
+    margin-bottom: 15px;
+    border: solid rgb(62, 172, 255) 1px;
+    width: 75%;
+}
+#livreOr input:first-child{
+    width: 30%;
+}
+#livreOr select{
+    width: 25%;
+}
+#livreOr button{
+    width: 20%;
+}

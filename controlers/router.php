@@ -3,6 +3,7 @@
     require_once 'controlerIndex.php';
     require_once 'controlerVoiture.php';
     require_once 'controlerConstructeur.php';
+    require_once 'controlerLivreor.php';
     require_once './views/view.php';
 
     class Router{
@@ -14,6 +15,7 @@
         private $ctrlConstructs;
         private $ctrlVoituresAnnee;
         private $ctrlVoituresMarque;
+        private $ctrlLivreDor;
 
         public function __construct(){
             $this->ctrlIndex = new ControlerIndex();
@@ -23,9 +25,16 @@
             $this->ctrlConstructs = new ControlerConstructeurs();
             $this->ctrlVoituresAnnee = new ControlerVoitureAnnee();
             $this->ctrlVoituresMarque = new ControlerVoituresMarque();
+            $this->ctrlLivreDor = new ControlerLivreor();
         }
 
         public function routeQuery(){
+            if(isset($_POST['action'])){
+                if($_POST['action'] == 'submit'){
+                    $this->ctrlLivreDor->submit(htmlspecialchars($_POST['pseudo']),htmlspecialchars($_POST['message']),htmlspecialchars($_POST['note']));
+                }
+            }
+            
             try{
                 if(isset($_GET['action'])){
                     if($_GET['action'] == 'voiture'){
@@ -42,6 +51,10 @@
                         $this->ctrlVoituresMarque->voituresMarque($_GET['id']);
                     }else if($_GET['action'] == 'annee'){
                         $this->ctrlVoituresAnnee->voitureAnnee(isset($_GET['annee'])?$_GET['annee']:null);
+                    }else if($_GET['action'] == 'livreor'){
+                        $this->ctrlLivreDor->messages();
+                    }else{
+                        $this->ctrlIndex->index();
                     }
                 } else{
                     $this->ctrlIndex->index();

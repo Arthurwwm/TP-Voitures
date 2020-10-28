@@ -23,12 +23,14 @@
             $this->autos = new Voiture();
         }
         public function voitures(){
+            //Si aucune page n'est spécifiée dans l'url -> go page 1
             if(isset($_GET['page'])){
                 $this->page = $_GET['page'];
             } else{
                 $this->page = 1;
             }
-            $nbPages = ($this->autos->countVoitures()/6)<1?1:$this->autos->countVoitures()/6;
+            //On détermine le nombre de pages nécessaire en fonction du nombre total de voiture et du nombre de voitures que l'on souhaite afficher par page (ici 6)
+            $nbPages = ceil(($this->autos->countVoitures()/6)<1?1:$this->autos->countVoitures()/6);
 
             $voitures = $this->autos->getVoituresPage($this->page);
             $view = new Vue('Voitures');
