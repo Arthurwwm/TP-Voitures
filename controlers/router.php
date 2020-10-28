@@ -29,13 +29,12 @@
         }
 
         public function routeQuery(){
-            if(isset($_POST['action'])){
-                if($_POST['action'] == 'submit'){
-                    $this->ctrlLivreDor->submit(htmlspecialchars($_POST['pseudo']),htmlspecialchars($_POST['message']),htmlspecialchars($_POST['note']));
-                }
-            }
-            
             try{
+                if(isset($_POST['action'])){
+                    if($_POST['action'] == 'submit'){
+                        $this->ctrlLivreDor->submit(htmlspecialchars($_POST['pseudo']),htmlspecialchars($_POST['message']),htmlspecialchars($_POST['note']));
+                    }
+                }
                 if(isset($_GET['action'])){
                     if($_GET['action'] == 'voiture'){
                         $this->ctrlVoiture->voiture($_GET['id']);
@@ -60,7 +59,7 @@
                     $this->ctrlIndex->index();
                 }
             } catch (Exception $e){
-                echo 'OULALALA'.$e->getMessage();
+                echo 'OULALALA '.$e->getMessage();
             }
         }
     }

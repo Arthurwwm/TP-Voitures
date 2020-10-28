@@ -9,9 +9,9 @@
         <h2>Les derniers modèles...</h2>
         <?php foreach($voitures as $voiture): ?>
             <a href="?action=voiture&id=<?= $voiture['id']?>">
-                <img src=<?="'public/images/autos/".$voiture['image']."'"?> alt="">
+                <img src=<?="'public/images/autos/".$voiture['image']."'"?> alt="voiture">
             </a>
         <?php endforeach; ?>
         <h2>Un constructeur, Une marque, Une histoire...</h2>
         <a href="?action=constructeur&id=<?= $constructeur['id']?>" id="lienConstructIndex"><?= $constructeur['nom'] ?></a><br>
-        <img src="<?= "public/images/logos/".$constructeur['logo'] ?>" alt="">
+        <img src="<?= "public/images/logos/".$constructeur['logo'] ?>" alt="logo">

@@ -3,7 +3,7 @@
 
     class Message extends Model{
 
-        const PAGE = 15;
+        const PAGE = 10;
 
         public function getAllMessages(){
             $sql = 'SELECT * FROM LIVREDOR';

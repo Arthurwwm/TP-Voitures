@@ -16,7 +16,7 @@
                 $this->page = 1;
             }
             
-            $nbPages = ceil(($this->messages->countMessages()/15)<1?1:$this->messages->countMessages()/15);
+            $nbPages = ceil(($this->messages->countMessages()/10)<1?1:$this->messages->countMessages()/10);
 
             $messages= $this->messages->getMessagesPage($this->page);
             $view = new Vue('Livreor');
