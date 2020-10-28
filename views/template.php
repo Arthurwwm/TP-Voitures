@@ -8,7 +8,9 @@
 </head>
 <body>
     <nav>
+    <a href="?action=index">
         <img src="public/icons/AutoRetroChic.png" alt="logo association">
+    </a>
         <h1>AutoRétro Chic</h1>
         <div id='liensNav'>
             <a href="?action=index">ACCUEIL</a>

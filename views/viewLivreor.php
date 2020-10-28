@@ -19,9 +19,14 @@
     }
 ?>
 </div>
+<?php if($nbPages>1){ ?>
 <p>Page
 <?php 
-for($i=1;$i<=$nbPages;$i++){
-    echo '<a href="?action=livreor&page='.$i.'" class="lienPages">'.$i.'</a>..';
-} ?>
+
+    for($i=1;$i<=$nbPages;$i++){
+        echo '<a href="?action=livreor&page='.$i.'" class="lienPages">'.$i.'</a>..';
+    } 
+}
+
+?>
 </p>
