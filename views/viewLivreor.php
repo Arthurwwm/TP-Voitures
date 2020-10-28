@@ -15,7 +15,7 @@
 <div id='zoneMsg'>
 <?php
     foreach($messages as $message){
-        echo "<div class='msgLivre'><h3>".$message['pseudo']."</h3><span>".$message['dateEnvoi']." note : ".$message['note']."</span><p>".$message['message']."</p></div>";
+        echo "<div class='msgLivre'><h3><img src='public/icons/iconeUser.png' class='iconeUser'>".$message['pseudo']."</h3><span>".$message['dateEnvoi']." note : ".$message['note']."</span><p>".$message['message']."</p></div>";
     }
 ?>
 </div>
